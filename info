@@ -8,6 +8,6 @@ if count(sql.id) > 1:
 else if sql.passwd == sql.id:
 	return
 
-student_id
 
-a' OR id BETWEEN '2021000' AND '2021150
+
+
