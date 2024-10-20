@@ -1,13 +1,13 @@
-a'; SELECT * FROM tables; '
-
-
 <php?
 sql = " SELECT * FROM tables WHERE id='' "
 if count(sql.id) > 1:
 	drop
 else if sql.passwd == sql.id:
 	return
+php>
 
+
+SELECT * FROM tables WHERE id='a' OR IF(HEX('a')=HEX('b'),2020001,'wrong'); -- ';
 
 
 
