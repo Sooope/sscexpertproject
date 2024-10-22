@@ -1,7 +1,7 @@
 import time
 import requests
 
-url = "http://aos.ssc.edu.hk/aos/e-sportsday/student/index.php"
+url = "--target--"
 
 
 #DO NOT CHANGE THIS PART
