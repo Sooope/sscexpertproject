@@ -10,4 +10,5 @@ php>
 SELECT * FROM tables WHERE id='a' OR IF(HEX('a')=HEX('b'),2020001,'wrong'); -- ';
 
 
-
+p -> correct
+c -> wrong
