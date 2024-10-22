@@ -9,7 +9,7 @@ url = "--target--"
 prox = {'http': "socks5://127.0.0.1:9050"}
 rcookie = requests.get(url, proxies=prox)
 cookies = {"PHPSESSID":rcookie.cookies['PHPSESSID']}
-alphabet = ["_","e","t","a","o","i","n","s","h","r","d","l","c","u","m","w","f","g","y","p","b","v","k","j","x","q","z","1","2","3","4","5","6","7","8","9","0"]
+alphabet = ["_","e","t","a","o","i","n","s","h","r","d","l","c","u","m","w","f","g","y","p","b","v","k","j","x","q","z"]
 IsFinish = False
 #DO NOT CHANGE THIS PART
 
