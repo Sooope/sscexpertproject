@@ -1,8 +1,8 @@
 import time
 import requests
 
-url = "http://sports.hys.edu.hk/aos/e-sportsday/student/index.php"
-schema = "sch_sportsday_hys_eng"
+url = "--target--"
+schema = "--target--"
 
 #DO NOT CHANGE THIS PART
 prox = {'http': "socks5://127.0.0.1:9050"}
